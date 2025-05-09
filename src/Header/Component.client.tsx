@@ -33,8 +33,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         className="container relative z-20  pb-8 "
         {...(theme ? { 'data-theme': theme } : {})}
       >
-        <div className="pt-8 pb-2 flex justify-between items-center">
-          <HeaderNav data={{ navItems: data.navItems?.slice(0, data.navItems.length / 2) }} />
+        <div className="pt-8 pb-2 flex md:flex-row flex-col justify-between items-center">
+          <div className="flex-1 md:block hidden">
+            <HeaderNav data={{ navItems: data.navItems?.slice(0, data.navItems.length / 2) }} />
+          </div>
           <Link href="/" className="flex flex-col items-center">
             <Logo loading="eager" priority="high" className="" />
 

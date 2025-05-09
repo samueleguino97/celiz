@@ -36,7 +36,7 @@ export default async function Page() {
           </span>
           <p className="mt-2 tracking-wide leading-normal">{inicio['about-me'].slice(1)}</p>
         </div>
-        <div className="xl:flex-col uppercase mt-6 xl:mt-0 flex gap-4 xl:w-max justify-evenly xl:pl-20">
+        <div className="flex-col md:flex-row xl:flex-col uppercase mt-6 xl:mt-0 flex gap-4 xl:w-max justify-evenly xl:pl-20">
           <Link
             prefetch
             href="/articulos"
@@ -44,7 +44,7 @@ export default async function Page() {
           >
             Leer Articulos
           </Link>
-          <div className="xl:hidden h-12 w-[2px] bg-[#00264d]" />
+          <div className="xl:hidden h-12 md:block hidden w-[2px] bg-[#00264d]" />
           <Link
             prefetch
             href="/contacto"
