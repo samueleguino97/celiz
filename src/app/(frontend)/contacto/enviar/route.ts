@@ -16,7 +16,7 @@ export async function POST(
   const body = await req.json()
 
   const email = await payload.sendEmail({
-    to: 'javiercelizo@gmail.com',
+    to: 'javierceliz@outlook.com',
     subject: 'Consulta / Solicitud de Servicio',
     html: body.content,
   })
