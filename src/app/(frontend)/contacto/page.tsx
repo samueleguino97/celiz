@@ -10,14 +10,26 @@ function Page() {
     email: '',
     message: '',
   })
-  function sendEmail() {
+  async function sendEmail() {
+    setSending(true)
     const formattedEmailContent = `
     <p>Hola mi nombre es ${formState.name} y me gustaria hacer una consulta.</p>
     <p>Correo: ${formState.email}</p>
     <p>${formState.message}</p>
     `
-    //send email
-    console.log(formattedEmailContent)
+    try {
+      await fetch('/api/contacto/enviar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          content: formattedEmailContent,
+        }),
+      })
+    } catch (error) {
+      console.error(error)
+    }
     setSent(true)
     setSending(false)
   }

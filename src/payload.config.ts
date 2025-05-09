@@ -5,6 +5,8 @@ import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
+import { resendAdapter } from '@payloadcms/email-resend'
+
 import { Media } from './collections/Media'
 import { Users } from './collections/Users'
 import { Inicio } from './Header/config'
@@ -93,4 +95,9 @@ export default buildConfig({
     fallbackLanguage: 'es',
     supportedLanguages: { es },
   },
+  email: resendAdapter({
+    defaultFromAddress: '"Celiz - Estudio Juridico" <no-reply@armoni.studio>',
+    defaultFromName: 'Celiz - Estudio Juridico',
+    apiKey: process.env.RESEND_API_KEY!,
+  }),
 })
