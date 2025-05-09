@@ -41,6 +41,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             <h2 className="text-xl  mt-2 font-semibold tracking-normal text-center text-[#e0c464]">
               CELIZ
             </h2>
+
+            <h2 className="text-xs   font-normal tracking-normal text-center text-[#e0c464]">
+              Oficina de Abogados
+            </h2>
           </Link>
           <HeaderNav data={{ navItems: data.navItems?.slice(data.navItems.length / 2) }} />
         </div>
