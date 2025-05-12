@@ -35,7 +35,7 @@ function Page() {
   }
   function sendWhatsapp() {
     setSending(true)
-    const link = `https://api.whatsapp.com/send?phone=+59179776992&text=${encodeURIComponent(
+    const link = `https://api.whatsapp.com/send?phone=+59179941433&text=${encodeURIComponent(
       `Buen Dia,
   mi nombre es ${formState.name}, correo: ${formState.email}.
   Me gustaria hacerle una consulta.
