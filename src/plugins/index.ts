@@ -47,7 +47,12 @@ export const plugins: Plugin[] = [
     },
   }),
   seoPlugin({
+    collections: ['articulos'],
     generateTitle,
+    uploadsCollection: 'media',
+    generateDescription: ({ doc }) => {
+      return doc?.description || ''
+    },
     generateURL,
   }),
   formBuilderPlugin({

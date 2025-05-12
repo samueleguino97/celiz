@@ -10,6 +10,7 @@ export const revalidatePost: CollectionAfterChangeHook<Articulo> = ({
   req: { payload, context },
 }) => {
   if (!context.disableRevalidate) {
+    revalidatePath('/articulos')
     if (doc._status === 'published') {
       const path = `/articulos/${doc.slug}`
 
@@ -26,6 +27,7 @@ export const revalidatePost: CollectionAfterChangeHook<Articulo> = ({
       payload.logger.info(`Revalidating old post at path: ${oldPath}`)
 
       revalidatePath(oldPath)
+
       revalidateTag('posts-sitemap')
     }
   }
@@ -38,6 +40,7 @@ export const revalidateDelete: CollectionAfterDeleteHook<Articulo> = ({
 }) => {
   if (!context.disableRevalidate) {
     const path = `/articulos/${doc?.slug}`
+    revalidatePath('/articulos')
 
     revalidatePath(path)
     revalidateTag('posts-sitemap')
